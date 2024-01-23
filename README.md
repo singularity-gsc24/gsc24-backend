@@ -30,10 +30,17 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
+Perform database migrations
+
+```bash
+py manage.py makemigrations
+py manage.py migrate
+```
+
 To run the project,
 
 ```bash
-python manage.py runserver
+py manage.py runserver
 ```
 
 Now visit `localhost:8000`
