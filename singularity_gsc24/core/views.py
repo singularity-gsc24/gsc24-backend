@@ -3,6 +3,7 @@ from json import JSONDecodeError
 from django.http import JsonResponse
 from rest_framework import status, views
 from rest_framework.parsers import JSONParser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
@@ -11,6 +12,7 @@ from .serializers import CountrySerializer, FishSerializer
 
 
 class FishAPIView(views.APIView):
+    permission_classes = [IsAuthenticated]
     serializer_class = FishSerializer
 
     def post(self, request: Request) -> Response | JsonResponse:
