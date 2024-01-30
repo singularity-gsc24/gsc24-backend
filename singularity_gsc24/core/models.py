@@ -32,16 +32,18 @@ class Country(Model):
 
 
 class Location(Model, TimeStampedModel):
-    name = models.ForeignKey(Fish, on_delete=models.CASCADE)
+    fish_name = models.ForeignKey(Fish, on_delete=models.CASCADE)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     population = models.IntegerField()
-    coordinates = models.TextField()
+    coordinates_map = models.TextField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
     day = models.IntegerField()
     month = models.IntegerField()
     year = models.IntegerField()
 
     def __str__(self) -> str:
-        return f"{self.name} - {self.country}"
+        return f"{self.fish_name} - {self.country}"
 
     class Meta:
         verbose_name_plural = "Locations"
