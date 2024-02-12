@@ -22,3 +22,13 @@ class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Location
         fields = '__all__'
+
+
+class FishLocationSerializer(serializers.ModelSerializer):
+    address = serializers.CharField(source='fish_name')
+    lat = serializers.FloatField(source='latitude')
+    lng = serializers.FloatField(source='longitude')
+
+    class Meta:
+        model = models.Location
+        fields = ('address', 'lat', 'lng')
