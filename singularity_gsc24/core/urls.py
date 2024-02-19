@@ -9,5 +9,3 @@ urlpatterns = [
     path('fish-location/', views.fish_location, name="fish-location"),
     path('fish-location-v2/', views.fish_location_v2, name="fish-location-v2"),
 ]
-
-# TODO: Add a url for Country, Location
